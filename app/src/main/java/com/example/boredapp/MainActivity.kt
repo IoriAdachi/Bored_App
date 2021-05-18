@@ -15,5 +15,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(colorGuessIntent)
             finish()
         }
+
+        button_main_deepfry.setOnClickListener {
+            val deepFryIntent = Intent(this@MainActivity, DeepFry::class.java)
+            startActivity(deepFryIntent)
+            finish()
+        }
     }
 }
