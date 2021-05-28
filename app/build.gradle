@@ -22,6 +22,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -31,7 +32,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.github.mukeshsolanki:photofilter:2.0.2'
-    implementation 'com.mashape.unirest:unirest-android:1.0+'
+    implementation 'com.mashape.unirest:unirest-android:1.0.6'
+    ext.anko_version='0.10.8'
+    implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation "androidx.recyclerview:recyclerview:1.2.0"
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

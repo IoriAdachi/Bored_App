@@ -12,8 +12,10 @@ import kotlinx.android.synthetic.main.activity_color_guess.*
 class ColorGuess : AppCompatActivity() {
 
     companion object{
-        val TAG = "Color desu"
+        val TAG = "Coloraaaa"
     }
+
+    var msg = "m"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +25,7 @@ class ColorGuess : AppCompatActivity() {
         textView_color_boxchange.setBackgroundColor(Color.rgb(red_change, green_change, blue_change))
 
         button_color_confirm.setOnClickListener {
-            Toast.makeText(this,check().toString(),Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, msgf() + " deviation is " + check().toString(),Toast.LENGTH_SHORT).show()
         }
 
         seekBar_color_h.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
@@ -139,6 +141,16 @@ class ColorGuess : AppCompatActivity() {
         scoreB = Math.abs(blue - blue_change)
 
         return ((scoreR + scoreG + scoreB)/3)
+    }
+
+    fun msgf(): String{
+        if (check()<=1)
+            msg="God mode"
+        else if (check()<=10)
+            msg="Pretty good"
+        else
+            msg="baddddddddddddd"
+        return msg
     }
 
 }

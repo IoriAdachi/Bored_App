@@ -1,21 +1,43 @@
-package com.example.boredapp
+package com.example.boredapp.Deep
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.opengl.GLSurfaceView
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.boredapp.R
 import com.mukesh.imageproccessing.OnProcessingCompletionListener
 import com.mukesh.imageproccessing.PhotoFilter
-import com.mukesh.imageproccessing.filters.AutoFix
-import com.mukesh.imageproccessing.filters.Saturate
-import kotlinx.android.synthetic.main.activity_deep_fry.*
+import com.mukesh.imageproccessing.filters.*
+import kotlinx.android.synthetic.main.activity_deep_fry.effectView
 
-class DeepFry : AppCompatActivity() {
 
-    private val TAG = "deep fry"
+class DeepFry : AppCompatActivity(), OnProcessingCompletionListener {
+
+    private lateinit var result: Bitmap
+
+    override fun onProcessingComplete(bitmap: Bitmap) {
+        // Do anything with the bitmap save it or add another effect to it
+        result = bitmap
+    }
+
+    private var photoFilter:PhotoFilter?=null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_deep_fry)
+        //Log.d(TAG, "broken")
+        photoFilter = PhotoFilter(effectView,this)
+        photoFilter?.applyEffect(BitmapFactory.decodeResource(resources, R.drawable.sadface), Negative())
+
+
+    }
+
+}
+
+
+
+    /*private val TAG = "deep fry"
     var bitmap: Bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.sadface)
     var imageView: ImageView = findViewById(R.id.imageView)
 
@@ -38,6 +60,4 @@ class DeepFry : AppCompatActivity() {
 
         imageView.setImageBitmap(bitmap)
 
-    }
-
-}
+    }*/

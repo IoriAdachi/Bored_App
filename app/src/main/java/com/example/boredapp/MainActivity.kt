@@ -3,6 +3,7 @@ package com.example.boredapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.boredapp.Deep.DeepFry
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,13 +19,16 @@ class MainActivity : AppCompatActivity() {
         button_main_deepfry.setOnClickListener {
             val deepFryIntent = Intent(this@MainActivity, DeepFry::class.java)
             startActivity(deepFryIntent)
-            finish()
         }
 
         button_main_numbers.setOnClickListener {
             val numberFactsIntent = Intent(this@MainActivity, NumberFacts::class.java)
             startActivity(numberFactsIntent)
-            finish()
+        }
+
+        button_main_settings.setOnClickListener {
+            val settingsIntent = Intent(this@MainActivity, Settings::class.java)
+            startActivity(settingsIntent)
         }
     }
 }

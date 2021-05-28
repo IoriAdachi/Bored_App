@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeepFry">
+    tools:context=".Deep.DeepFry">
 
     <ImageView
         android:id="@+id/imageView"
@@ -18,4 +18,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/sadface" />
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/effectView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
