@@ -10,7 +10,7 @@ import com.example.boredapp.R
 import com.mukesh.imageproccessing.OnProcessingCompletionListener
 import com.mukesh.imageproccessing.PhotoFilter
 import com.mukesh.imageproccessing.filters.*
-import kotlinx.android.synthetic.main.activity_deep_fry.effectView
+import kotlinx.android.synthetic.main.activity_deep_fry.*
 
 
 class DeepFry : AppCompatActivity(), OnProcessingCompletionListener {
@@ -28,9 +28,7 @@ class DeepFry : AppCompatActivity(), OnProcessingCompletionListener {
         setContentView(R.layout.activity_deep_fry)
         //Log.d(TAG, "broken")
         photoFilter = PhotoFilter(effectView,this)
-        photoFilter?.applyEffect(BitmapFactory.decodeResource(resources, R.drawable.sadface), Negative())
-
-
+        photoFilter?.applyEffect(BitmapFactory.decodeResource(resources, R.drawable.sadface), Contrast(800F))
     }
 
 }

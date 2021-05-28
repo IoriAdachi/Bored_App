@@ -7,6 +7,8 @@ import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_color_guess.*
+import java.util.*
+import kotlin.concurrent.schedule
 
 
 class ColorGuess : AppCompatActivity() {
@@ -26,6 +28,9 @@ class ColorGuess : AppCompatActivity() {
 
         button_color_confirm.setOnClickListener {
             Toast.makeText(this, msgf() + " deviation is " + check().toString(),Toast.LENGTH_SHORT).show()
+            Timer("SettingUp", false).schedule(500) {
+                randomize()
+            }
         }
 
         seekBar_color_h.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
