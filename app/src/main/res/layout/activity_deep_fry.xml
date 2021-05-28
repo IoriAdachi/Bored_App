@@ -7,20 +7,41 @@
     android:layout_height="match_parent"
     tools:context=".Deep.DeepFry">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="203dp"
-        android:layout_height="364dp"
-        android:layout_centerInParent="true"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/sadface" />
-
     <android.opengl.GLSurfaceView
         android:id="@+id/effectView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/imageView_filter_original"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/sadface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_filter_activate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
+        android:text="DEEP FRY!"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/effectsRecyclerView"
+        android:layout_width="317dp"
+        android:layout_height="242dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_filter_activate" />
 </androidx.constraintlayout.widget.ConstraintLayout>
